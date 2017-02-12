@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Full Screen Images Example 2</title>
+		
+		<style>
+			
+			* {margin: 0; padding: 0; box-sizing: border-box; }
+			img {max-width: 100%;}
+			
+			body {
+				font-family: Arial;
+				background: #ccc;
+			}
+			
+			header {
+				width: 100%; /*changed from a fixed width*/
+				height: 600px; /*change to a percentage to see what happens*/
+				padding-top: 400px; /*change to 0*/
+				/*margin: auto; Since the header is full width, we don't need to center it anymore*/
+				background: #fff url(images/pie01.jpg) /*no-repeat*/;
+				background-size: contain;
+				/*background-size: cover;*/
+			}
+			
+			#main, h1 {
+				margin: auto;
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+			}
+			
+			p {
+				line-height: 1.4em;
+				margin-bottom: 1em;
+			}
+		
+		</style>
+		
+	</head>
+
+	<body>
+	
+		<header>
+		
+			<h1>Full Width Large Background Images With Cropping</h1>
+			
+		</header>
+		
+		<section id="main">
+			
+			<p>You can see in the styling above that the width of the header has been changed to 100% on line 18. This gives us a full width space for the background image, but you can see it starts to repeat. If you uncomment out the no-repeat on line 22, you will see the white background fills the area that the image does not fill, if the browser is wider than 1200px. This is because the dimentions of the header do not necessarily match the dimentions of the image.</p>
+			
+			<p>Comment out, or remove the background-size:contain declaration on line 23 and uncomment the background-size:cover declaration. You will see that the image now fills the entire container and gets cropped if the screen does not match the proportions.</p>
+			
+			<p>Now, if you don't care too much about the image getting cropped at all screen sizes, except ones that just happen to match the proportions of your image, then this may be a good solution for you. (It's not so bad for the image on this page.)</p>
+			
+			<p>However, if you care about the whole image, which is often the case, having it scale proportionally is tricky. Notice if you try to make the height a percentage, things don't really work out.</p>
+			
+			<p>Look at example 3 for a potential solution.</p>
+			
+		</section>
+
+
+
+	</body>
+</html>

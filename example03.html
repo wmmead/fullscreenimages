@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Full Screen Images Example 3</title>
+		
+		<style>
+			
+			* {margin: 0; padding: 0; box-sizing: border-box; }
+			img {max-width: 100%;}
+			
+			body {
+				font-family: Arial;
+				background: #ccc;
+			}
+			
+			header {
+				width: 100%;
+				/*height: 600px;*/
+				padding-top: 50%;
+				/*margin: auto;*/
+				background: #fff url(images/pie01.jpg);
+				/*background-size: contain;*/
+				background-size: cover;
+				/*Add position relative so the h1 can be positioned within the parent header element*/
+				position: relative;
+			}
+			
+			#main{
+				margin: auto;
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+			}
+			
+			h1 {
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+				
+				/*Positioning needed or the h1 will add to the height of
+				the header, messing up the proportions and then cropping 
+				the header image. */
+				position: absolute;
+				top: 100px;
+				left: 50%;
+				margin-left: -460px;
+			}
+			
+			p {
+				line-height: 1.4em;
+				margin-bottom: 1em;
+			}
+		
+		</style>
+		
+	</head>
+
+	<body>
+	
+		<header>
+		
+			<h1>Full Width Background Images That Scale With The Page</h1>
+			
+		</header>
+		
+		<section id="main">
+			
+			<p>On this example, you can see on line 19 that I removed the height declaration altogether. Instead the height of the element is determined by the padding-top declaration. Since this image is exactly twice as wide as it is tall, the proportions are simple. The 50% padding for the top of this element is relative to the width. As you change the size of the window, the relative size of the header element changes with it.</p>
+			
+			<p>It is important to note that any other content inside this header element, must then be positioned absolutely, or it will add more to the height of the element, which then throws off the proportions, leading to cropped images again.</p>
+			
+			<p>Also, if you want to center absolutely positioned elements, margin:auto will not work. One solution is to tell the element to start at 50% from the left edge of the page, then set a negative margin equal to half the width of the element.</p>
+			
+			<p><img src="images/screenshot1.png" alt="screen shot 1"></p>
+			<p>It is easy to tell that the correct proportion for this image 2 to 1 (width to height), but what if your image proportions are different? Do you have to resort to doing math?</p>
+			
+			<p><img src="images/screenshot2.png" alt="screen shot 2"></p>
+			<p>Here is a cheater's approach to avoiding math... Just set the width on the image you want to use in photoshop temporarily to 100px and you will get the correct percentage in the height.</p>
+			
+			<p>Let's take a look at something else.</p>
+			
+		</section>
+
+
+
+	</body>
+</html>

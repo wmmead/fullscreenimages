@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Full Screen Images Example 1</title>
+		
+		<style>
+			
+			* {margin: 0; padding: 0; box-sizing: border-box; }
+			img {max-width: 100%;}
+			
+			body {
+				font-family: Arial;
+				background: #ccc;
+			}
+			
+			header {
+				width: 1200px;
+				height: 600px;
+				padding-top: 400px;
+				margin: auto;
+				background: #fff url(images/pie01.jpg);
+				/*background-size: contain;*/
+			}
+			
+			#main, h1 {
+				margin: auto;
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+			}
+			
+			p {
+				line-height: 1.4em;
+				margin-bottom: 1em;
+			}
+		
+		</style>
+		
+	</head>
+
+	<body>
+	
+		<header>
+		
+			<h1>Fixed Width Large Background Images</h1>
+			
+		</header>
+		
+		<section id="main">
+			
+			<p>Above, we have a page set to a fixed width. The image in the header is in the background, and since the image is twice as wide as it is tall, you can easily set the height of that header to half the width of the picture. Notice that the image is cropped. This is because the actuall photo is 2000 pixels wide and does not fit. This can be changed with the background size property. Set to contain, the entire background image will be displayed in the container. This works here because the proportions of the header container are exactly the same proportions of the image.</p>
+			
+			<p>However, this is clearly not a "full screen" image, since a screen could be wider or narrower than 1200px. When we get to the flexible screen sizes, we run into problems with the specifically defined widths above.</p>
+			
+			<p>Let's take a look at the next example.</p>
+			
+		</section>
+
+
+
+	</body>
+</html>

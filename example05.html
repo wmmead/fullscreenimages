@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Full Screen Images Example 5</title>
+		
+		<style>
+			
+			* {margin: 0; padding: 0; box-sizing: border-box; }
+			img {max-width: 100%;}
+			
+			
+			
+			body {
+				font-family: Arial;
+				background: #ccc;
+			}
+			
+			header {
+				width: 100%;
+				/*height: 600px;*/
+				padding-top: 50%;
+				/*margin: auto;*/
+				/*Load a small image by default for small screens*/
+				background: url(images/pie01a.jpg);
+				/*background-size: contain;*/
+				background-size: cover;
+				/*Add position relative so the h1 can be positioned within the parent header element*/
+				position: relative;
+			}
+			
+			#main{
+				margin: auto;
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+			}
+			
+			h1 {
+				width: 960px;
+				padding: 20px;
+				background: #fff;
+				
+				/*Positioning needed or the h1 will add to the height of
+				the header, messing up the proportions and then cropping 
+				the header image. */
+				position: absolute;
+				top: 100px;
+				left: 50%;
+				margin-left: -460px;
+			}
+			
+			p {
+				line-height: 1.4em;
+				margin-bottom: 1em;
+			}
+			
+			/* These media queries will kick in as the screen size increases */
+			
+			
+			@media only screen and (min-width: 600px) {
+				
+				header { background: url(images/pie01b.jpg); background-size: cover;}
+				
+			}
+			
+			@media only screen and (min-width: 1300px) {
+				
+				header { background: url(images/pie01c.jpg); background-size: cover;}
+				
+			}
+			
+			@media only screen and (min-width: 2000px) {
+				
+				header { background: url(images/pie01.jpg); background-size: cover;}
+				
+			}
+			
+			
+			
+			@media only screen and (max-width: 960px) {
+				
+				h1 {
+					width:100%;
+					margin: 0;
+					left: 0;
+				}
+				
+				#main {
+					width: 100%;
+				}
+				
+			}
+			
+			
+		
+		</style>
+		
+	</head>
+
+	<body>
+	
+		<header>
+		
+			<h1>Load Smaller Background Images</h1>
+			
+		</header>
+		
+		<section id="main">
+			
+			<p>On this example, you will need photoshop or some sort of editor to create some smaller background images. In photoshop, open the pie01.jpg resize it down to about 300px wide and export it again, at about 80% quality. Save it as pie01a.jpg. This will load by default if you are on mobile.</p>
+			
+			<p>You will notice that if you make your browser bigger, around 600px wide, the background image starts to look really bad.</p>
+			
+			<p>Resize the image in photoshop to 600px wide and save it as pie01b.jpg. Then do the same thing again at 1300px wide, saving it as pie01c.jpg</p>
+			
+			<p>The Chrome developer tools (inspector) can help us see how this works on a network. We need to run it from a server though for this to work. I am just going to use MAMP. I can throttle the loading of the page to look like it would look if I were on a 3G network (which is pretty slow by today's standards.</p>
+			
+			<p>If I start with my browser small, like mobile, you will see the small image load, and you can see how long it takes. If I then make my browser wider, without even reloading, when it gets to 600px wide, the larger background image comes in. Then again at 1300 pixels and if you have a large enough monitor, you can see the monster sized image come in at 2000px. This means you are only loading the size image you need, and not wasting bandwidth downloading masive images.</p>
+			
+			<p>Note: This works for background images in CSS, images that are in your content, like the image of the graph below are a different story. For that, you may need to explore the picture tag.</p>
+			
+			<p><img src="images/screenshot3.png" alt="screen shot 3"></p>
+			
+			<p>I hope these examples help.</p>
+			
+		</section>
+
+
+
+	</body>
+</html>
